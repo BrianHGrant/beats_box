@@ -1,25 +1,30 @@
 $(document).ready(function() {
 
-  for(var i=1; i<6; i++){
+  for(var i=0; i<6; i++){
     $(".instrument"+ i).append(
-         '<label><input type="checkbox" class ="checbox0" id="checkbox' + i +'0" name="instrument' + i +'"value="instrument' + i +'"><span></span></label><br>'
-        +'<label><input type="checkbox" class ="checbox1" id="checkbox' + i +'1" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox2" id="checkbox' + i +'2" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox3" id="checkbox' + i +'3" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox4" id="checkbox' + i +'4" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox5" id="checkbox' + i +'5" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox6" id="checkbox' + i +'6" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
-        +'<label><input type="checkbox" class ="checbox7" id="checkbox' + i +'7" name="instrument' + i +'"value="instrument' + i +'"><span></span></label>'
+         '<label><input type="checkbox" class ="checbox0" id="checkbox' + i +'0" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '0" ></span></label><br>'
+        +'<label><input type="checkbox" class ="checbox1" id="checkbox' + i +'1" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '1"></span></label>'
+        +'<label><input type="checkbox" class ="checbox2" id="checkbox' + i +'2" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '2"></span></label>'
+        +'<label><input type="checkbox" class ="checbox3" id="checkbox' + i +'3" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '3"></span></label>'
+        +'<label><input type="checkbox" class ="checbox4" id="checkbox' + i +'4" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '4"></span></label>'
+        +'<label><input type="checkbox" class ="checbox5" id="checkbox' + i +'5" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '5"></span></label>'
+        +'<label><input type="checkbox" class ="checbox6" id="checkbox' + i +'6" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '6"></span></label>'
+        +'<label><input type="checkbox" class ="checbox7" id="checkbox' + i +'7" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '7"></span></label>'
 
     );
-  }
+  };
+  for(i=0;i<8;i++) {
+    $("#span0" + i).css("background-image", "url('img/num" + (i +1) + ".png')");
+    $("#span0" + i).css("background-size", "contain");
+    $("#span0" + i).css("background-repeat", "no-repeat");
+  };
 
   $("#show-drums").click(function(event) {
     $("#bgvid")[0].pause();
     $(".instruction").hide();
     $(".gridpage").show();
     instructionLoop()
-    var instructionInterval = setInterval(instructionLoop, 15000);
+    var instructionInterval = setInterval(instructionLoop, 21000);
   });
 
   $("#show-instruction").click(function(event) {
@@ -128,6 +133,9 @@ $(document).ready(function() {
     }
 
     else {
+      $('.instrument0 input[type=checkbox]').each(function () {
+         $(this).prop('checked', true);
+      });
       $("#instruction-display").hide();
       $("#warning-display").text("Loop playing. Stop and restart loop to hear any changes made.");
       var tempo = 60000/ bpm;
@@ -248,15 +256,14 @@ function playSound(sound) {
 
 function colorBack(j, color) {
   $(".checbox" + j +":input[type=checkbox]:checked ~ span").css("background-color", color);
-
 }
 
 function instructionLoop() {
-  $("#instruction-display").text("1. Choose 0 or more instruments per column to play at desired beat.");
+  $("#instruction-display").text("1. You can select 0 or more instruments to play at each numbered beat.");
   setTimeout(function() {
     $("#instruction-display").text("2. Enter desired beats per minute(BPM).");
-  }, 5000);
+  }, 7000);
   setTimeout(function() {
     $("#instruction-display").text("3. Click Start to Play Loop! ");
-  }, 10000);
+  }, 14000);
 }
