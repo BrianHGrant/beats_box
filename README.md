@@ -1,5 +1,4 @@
-# Project Name
-* Beats Box EP-909
+# Beats Box EP-909
 * Drum Machine Based in JavaScript
 
 ## By
