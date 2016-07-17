@@ -22,6 +22,23 @@ img {
 	color: 	#30A3B0;
 	text-shadow: -1px 0 white, 0 1px #003B1F, 1px 0 #003B1F, 0 -1px #003B1F;
 }
+#heading h3 {
+	color: red;
+	text-shadow: none;
+}
+#heading h5 {
+	color: black;
+	text-shadow: none;
+}
+
+#heading img {
+	border: 2px solid black;
+	border-radius: 2px;
+}
+
+#heading a {
+	color: 	#30A3B0;
+}
 
 video {
 	border-style: inset;
