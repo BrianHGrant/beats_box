@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  for(var i=0; i<6; i++){
+  for(var i=1; i<6; i++){
     $(".instrument"+ i).append(
          '<label><input type="checkbox" class ="checbox0" id="checkbox' + i +'0" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '0" ></span></label><br>'
         +'<label><input type="checkbox" class ="checbox1" id="checkbox' + i +'1" name="instrument' + i +'"value="instrument' + i +'"><span id="span' + i + '1"></span></label>'
@@ -13,18 +13,13 @@ $(document).ready(function() {
 
     );
   };
-  for(i=0;i<8;i++) {
-    $("#span0" + i).css("background-image", "url('img/num" + (i +1) + ".png')");
-    $("#span0" + i).css("background-size", "contain");
-    $("#span0" + i).css("background-repeat", "no-repeat");
-  };
 
   $("#show-drums").click(function(event) {
     $("#bgvid")[0].pause();
     $(".instruction").hide();
     $(".gridpage").show();
     instructionLoop()
-    var instructionInterval = setInterval(instructionLoop, 21000);
+    var instructionInterval = setInterval(instructionLoop, 28000);
   });
 
   $("#show-instruction").click(function(event) {
@@ -259,11 +254,14 @@ function colorBack(j, color) {
 }
 
 function instructionLoop() {
-  $("#instruction-display").text("1. You can select 0 or more instruments to play at each numbered beat.");
+  $("#instruction-display").text("1. Choose 0 or more instruments per column.");
   setTimeout(function() {
-    $("#instruction-display").text("2. Enter desired beats per minute(BPM).");
+    $("#instruction-display").text("If you choose more then one instrument in column they will play at same time.");
   }, 7000);
   setTimeout(function() {
-    $("#instruction-display").text("3. Click Start to Play Loop! ");
+    $("#instruction-display").text("2. Enter desired beats per minute(BPM).");
   }, 14000);
+  setTimeout(function() {
+    $("#instruction-display").text("3. Click Start to Play Loop! ");
+  }, 21000);
 }

@@ -54,7 +54,7 @@ video {
 
 .message-box {
  height: 85px;
- width: 250px;
+ width: 300px;
  margin-top: 0.5em;
  margin-bottom: 0.5em;
  margin-left: 33%;
@@ -89,19 +89,9 @@ video {
 	background:rgba(250,250,250,0.5);
 }
 
-.instrument0 input ~ span {
-	background:rgba(250,250,250,0);
-	border: none;
-	cursor: default;
-}
-
 .sequencer input[type=checkbox]:checked ~ span {
 	background-image: url("../img/Drums-Sample.png");
 	background-size: contain;
-}
-
-.instrument0 input[type=checkbox]:checked ~ span {
-	background-image: none;
 }
 
 .sequencer label input {
@@ -124,10 +114,6 @@ video {
 
 }
 
-#instrument0 {
-	opacity: 1;
-	background-color: rgba(169,169,169,1)
-}
 #tempo {
 	width: 50%;
 	margin-left: 25%;
