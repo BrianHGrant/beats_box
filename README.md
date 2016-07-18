@@ -28,7 +28,7 @@ The Beats Box EP-909 is a Drum Machine and rhythm composer capable of looping 5 
     https://github.com/BrianHGrant/drum-machine
 
 ## Installation
-The Epicodus TR-909 can be accessed through a webpage at https://brianhgrant.github.io/drum-machine/
+The Beats Box EP-909 can be accessed through a webpage at http://beats-box.bhgconcepts.com/
 
 ## Technologies Used
 HTML5, CSS, JavaScript, JQuery 3, BootStrap
